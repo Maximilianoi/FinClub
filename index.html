@@ -1,0 +1,386 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+
+  <img id="banner" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/Finclub-logo-300x178.png"/>
+  <img  />
+
+<form id="Filters" class="controls">
+<fieldset class="filter-group checkboxes">
+<h4>Preferred Benefits</h4>
+
+
+<div class="checkbox"><input type="checkbox" value=".mileage"/>
+<label>Mileage</label></div>
+
+<div class="checkbox"><input type="checkbox" value=".points" />
+<label>Points</label></div>
+
+<div class="checkbox"><input type="checkbox" value=".discounts" />
+<label>Discounts</label></div></fieldset>
+
+<fieldset class="filter-group checkboxes">
+<h4>Frequently Used Areas</h4>
+
+<div class="checkbox"><input type="checkbox" value=".tech"/>
+<label>Tech</label></div>
+
+<div class="checkbox"><input type="checkbox" value=".supermarket" />
+<label>Supermarket</label></div>
+
+
+
+<div class="checkbox"><input type="checkbox" value=".gas" />
+<label>Gas</label></div></fieldset>
+<fieldset class="filter-group checkboxes">
+
+
+<h4>Fees</h4>
+
+<div class="checkbox"><input type="checkbox" value=".yes" />
+<label>Yes</label></div>
+
+
+<div class="checkbox"><input type="checkbox" value=".no" />
+<label>No</label></div></fieldset>
+<button id="Reset">Clear Filters</button>
+
+
+</form>
+
+<div class="income"> <label class=padding>
+I Spend in Gas  per Month </label>
+<input type="text" name="input1" id="input1" value="500">
+<label class="padding">I spend on Groceries</label>
+<input type="text" name="input2" id="input2" value="500"> 
+<controls>
+<button onclick="calculate()">Calculate</button> </controls>
+</div>
+
+
+
+
+<div id="Container" class="container">
+<div class="fail-message">No items were found matching the selected filters</div>
+
+
+<div class="mix mileage tech yes">
+<div class="productItem" data-category="Savings">
+<a href="https://usa.visa.com">
+  <img id="card1"="alignnone size-medium wp-image-41" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/wfcc002_ph_b-platinum-flat_300x165-300x165.png" alt="" width="300" height="165" /> </a>
+
+<div class="test" hidden>
+
+<img src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/apply_now_button_1-300x72.png" alt="" width="300" height="72" class="alignnone size-medium wp-image-189" />
+
+</div>
+<table class="tableD" style="height: 15px;" width="300">
+<tbody>
+<tr>
+<thead>
+<tr>
+<th>Monthly Fee</th>
+<th>Interest Rate</th>
+<th>Miles per $ Spent</th>
+<th class="savings"><span style="color:green">Savings</span></th>
+</tr>
+</thead>
+<td>$100</td>
+<td>1.5%</td>
+<td>$150</td>
+<td id="output1" ></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="mix mileage tech no">
+ <img class="alignnone size-medium wp-image-40" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/image.dmp_.full_.rbs-clear-rate-credit-card-302-300x190.png" alt="" width="280" height="165" />
+
+<table class="tableD" style="height: 15px;" width="300">
+<tbody>
+<tr>
+<thead>
+<tr>
+<th>Monthly Fee</th>
+<th>Interest Rate</th>
+<th>Miles per $ Spent</th>
+<th class="savings"><span style="color:green">Savings</span></th>
+</tr>
+</thead>
+<td>$100</td>
+<td>1.5%</td>
+<td>$150</td>
+<td id="output2" class="Biggie"></td>
+</tr>
+</table>
+
+</div>
+<div class="mix points supermarket yes">
+<img class="alignnone size-medium wp-image-39" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/httpfeedshare.goldenfeeds.comciticardsimagesCitiSimplicityrCardVisa-300x190.jpg" alt="" width="270" height="165" />
+
+<table class="tableD" style="height: 15px;" width="300">
+<tbody>
+<tr>
+<thead>
+<tr>
+<th>Monthly Fee</th>
+<th>Interest Rate</th>
+<th>Miles per $ Spent</th>
+<th class="savings"><span style="color:green">Savings</span></th>
+</tr>
+</thead>
+<td>$100</td>
+<td>1.5%</td>
+<td>$150</td>
+<td id="output3" class="Biggie"></td>
+</tr>
+</table>
+</div>
+<div class="mix points supermarket no">
+ <img class="alignnone size-medium wp-image-38" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/delta_amex_gold-300x197.jpg" alt="" width="300" height="170" />
+
+<table class="tableD" style="height: 15px;" width="300">
+<tbody>
+<tr>
+<thead>
+<tr>
+<th>Monthly Fee</th>
+<th>Interest Rate</th>
+<th>Miles per $ Spent</th>
+<th class="savings"><span style="color:green">Savings</span></th>
+</tr>
+</thead>
+<td>$100</td>
+<td>1.5%</td>
+<td>$150</td>
+<td id="output4" class="Biggie"></td>
+</tr>
+</table>
+</div>
+
+<div class="mix discounts gas no"><img class="alignnone size-medium wp-image-37" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/cash-rewards-classic-rays-651x412-300x190.png" alt="" width="280" height="180" /></a>
+
+
+<table class="tableD" style="height: 15px;" width="300">
+<tbody>
+<tr>
+<thead>
+<tr>
+<th>Monthly Fee</th>
+<th>Interest Rate</th>
+<th>Miles per $ Spent</th>
+<th class="savings"><span style="color:green">Savings</span></th>
+</tr>
+</thead>
+<td>$100</td>
+<td>1.5%</td>
+<td>$150</td>
+<td id="output5" class="Biggie"></td>
+</tr>
+</table>
+
+</div>
+
+<div class="mix discounts gas yes">
+<img class="alignnone size-full wp-image-36" src="http://finclubarg.wpengine.com/wp-content/uploads/2017/03/8aze_nrwcm_v_250x158.png" alt="" width="270" height="179" />
+
+<table class="tableD" style="height: 15px;" width="300">
+<tbody>
+<tr>
+<thead>
+<tr>
+<th>Monthly Fee</th>
+<th>Interest Rate</th>
+<th>Miles per $ Spent</th>
+<th class="savings"><span style="color:green">Savings</span></th>
+</tr>
+</thead>
+<td>$100</td>
+<td>1.5%</td>
+<td>$150</td>
+<td id="output6" class="Biggie"></td>
+</tr>
+</table>
+
+
+</div>
+<div class="gap"></div>
+<div class="gap"></div>
+<div class="gap"></div>
+<div class="gap"></div>
+</div>
+&nbsp;
+<!-- noformat on -->
+<script>
+// To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "multiFilter".
+var multiFilter = {
+  // Declare any variables we will need as properties of the object
+  $filterGroups: null,
+  $filterUi: null,
+  $reset: null,
+  groups: [],
+  outputArray: [],
+  outputString: '',
+  // The "init" method will run on document ready and cache any jQuery objects we will need.
+    init: function(){
+    var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "checkboxFilter" object so that we can share methods and properties between all parts of the object.
+    self.$filterUi = jQuery('#Filters');
+    self.$filterGroups = jQuery('.filter-group');
+    self.$reset = jQuery('#Reset');
+    self.$container = jQuery('#Container');
+    self.$filterGroups.each(function(){
+      self.groups.push({
+        $inputs: jQuery(this).find('input'),
+        active: [],
+		    tracker: false
+      });
+    });   
+    self.bindHandlers();
+  },
+  // The "bindHandlers" method will listen for whenever a form value changes. 
+  bindHandlers: function(){
+    var self = this,
+        typingDelay = 300,
+        typingTimeout = -1,
+        resetTimer = function() {
+          clearTimeout(typingTimeout);    
+          typingTimeout = setTimeout(function() {
+            self.parseFilters();
+          }, typingDelay);
+        };
+    self.$filterGroups
+      .filter('.checkboxes')
+    	.on('change', function() {
+      	self.parseFilters();
+    	});
+    self.$filterGroups
+      .filter('.search')
+      .on('keyup change', resetTimer);
+    self.$reset.on('click', function(e){
+      e.preventDefault();
+      self.$filterUi[0].reset();
+      self.$filterUi.find('input[type="text"]').val('');
+      self.parseFilters();
+    });
+  },
+  // The parseFilters method checks which filters are active in each group:
+  parseFilters: function(){
+    var self = this;
+    // loop through each filter group and add active filters to arrays
+    for(var i = 0, group; group = self.groups[i]; i++){
+      group.active = []; // reset arrays
+      group.$inputs.each(function(){
+        var searchTerm = '',
+       			$input = jQuery(this),
+            minimumLength = 3;
+        if ($input.is(':checked')) {
+          group.active.push(this.value);
+        }
+        if ($input.is('[type="text"]') && this.value.length >= minimumLength) {
+          searchTerm = this.value
+            .trim()
+            .toLowerCase()
+            .replace(' ', '-');
+          group.active[0] = '[class*="' + searchTerm + '"]'; 
+        }
+      });
+	    group.active.length && (group.tracker = 0);
+    }
+    self.concatenate();
+  },
+  // The "concatenate" method will crawl through each group, concatenating filters as desired:
+  concatenate: function(){
+    var self = this,
+		  cache = '',
+		  crawled = false,
+		  checkTrackers = function(){
+        var done = 0; 
+        for(var i = 0, group; group = self.groups[i]; i++){
+          (group.tracker === false) && done++;
+        }
+        return (done < self.groups.length);
+      },
+      crawl = function(){
+        for(var i = 0, group; group = self.groups[i]; i++){
+          group.active[group.tracker] && (cache += group.active[group.tracker]);
+          if(i === self.groups.length - 1){
+            self.outputArray.push(cache);
+            cache = '';
+            updateTrackers();
+          }
+        }
+      },
+      updateTrackers = function(){
+        for(var i = self.groups.length - 1; i > -1; i--){
+          var group = self.groups[i];
+          if(group.active[group.tracker + 1]){
+            group.tracker++; 
+            break;
+          } else if(i > 0){
+            group.tracker && (group.tracker = 0);
+          } else {
+            crawled = true;
+          }
+        }
+      };
+    self.outputArray = []; // reset output array
+	  do{
+		  crawl();
+	  }
+	  while(!crawled && checkTrackers());
+    self.outputString = self.outputArray.join(); 
+    // If the output string is empty, show all rather than none:
+    !self.outputString.length && (self.outputString = 'all'); 
+    console.log(self.outputString); 
+    // ^ we can check the console here to take a look at the filter string that is produced
+    // Send the output string to MixItUp via the 'filter' method:
+	  if(self.$container.mixItUp('isLoaded')){
+    	self.$container.mixItUp('filter', self.outputString);
+	  }
+  }
+};
+// On document ready, initialise our code.
+jQuery(function(){
+  // Initialize multiFilter code
+  multiFilter.init();
+  // Instantiate MixItUp
+  jQuery('#Container').mixItUp({
+    controls: {
+      enable: false // we won't be needing these
+    },
+    animation: {
+      easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+      queueLimit: 3,
+      duration: 600
+    }
+  });    
+});
+function calculate(){
+   var textValue1 = document.getElementById('input1').value;
+   var textValue2 = .02;
+var textValue3 = document.getElementById('input2').value;
+var textValue4=.02;
+var textValue5=.05; /*gas RBS CC*/
+var textValue6=.06; /*groceries RBS CC*/
+var textValue7=.07; /*gas Citi CC*/
+var textValue8=.08; /*groceries Citi CC*/
+var textValue9=.09; /*gas Amex CC*/
+var textValue10=.10; /*groceries Amex CC*/
+var textValue11=.11; /*gas SunTrust CC*/
+var textValue12=.12; /*groceries SunTrust CC*/
+var textValue13=.13; /*gas BofA CC*/
+var textValue14=.14; /*groceries BofA CC*/
+   jQuery('#output1').text((textValue1 * textValue2 + textValue3*textValue4)*12).css('font-size', '2em').css('color', '#60d130'); 
+   jQuery('#output2').text((textValue1 * textValue5 + textValue3*textValue6)*12).css('font-size', '2em').css('color', '#60d130'); /*RBS*/
+   jQuery('#output3').text((textValue1 * textValue7 + textValue3*textValue8)*12).css('font-size', '2em').css('color', '#60d130'); /*Citi*/
+   jQuery('#output4').text((textValue1 * textValue9 + textValue3*textValue10)*12).css('font-size', '2em').css('color', '#60d130'); /*Amex*/
+   jQuery('#output5').text((textValue1 * textValue11 + textValue3*textValue12)*12).css('font-size', '2em').css('color', '#60d130');/*Suntrust*/
+jQuery('#output6').text((textValue1 * textValue13 + textValue3*textValue14)*12).css('font-size', '2em').css('color', '#60d130'); /*BofA*/
+}
+jQuery( "#card1" ).hover(
+  function() {
+    jQuery('div.test').show();
+  },
+  function() {
+jQuery('div.test').hide();
+});
+</script>
+<!-- noformat off -->
